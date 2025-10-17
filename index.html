@@ -54,34 +54,18 @@
         </div>
     </div>
 
-    <script>
-        // ========== CONFIGURATION ==========
-        // Your WhatsApp redirect URL
-        const WHATSAPP_NUMBER = "2349054162219"; // Country code + number
-        const CUSTOM_MESSAGE = "Hello! I just completed the form.";
-        const REDIRECT_URL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(CUSTOM_MESSAGE)}`;
-        
-        // For WhatsApp Group, use:
-        // const REDIRECT_URL = "https://chat.whatsapp.com/YOUR_GROUP_INVITE_CODE";
-        // ===================================
+<script>
+var load = 0;
 
-        var load = 0;
-        document.getElementById('gform').onload = function(){
-            /* Execute on every reload on iFrame */
-            load++;
-            
-            if(load > 1){
-                /* Second reload is a submit */
-                // Hide form and show loading
-                document.getElementById('gform').style.display = 'none';
-                document.getElementById('loading').style.display = 'block';
-                
-                // Redirect after 2 seconds
-                setTimeout(function() {
-                    window.location.href = REDIRECT_URL;
-                }, 2000);
-            }
-        }
-    </script>
+document.getElementById('gform').onload = function(){
+    /*Execute on every reload on iFrame*/
+    load++;
+    if(load > 1){
+        /*Second reload is a submit*/
+        document.location = "https://calstins.github.io/whatsapp-redirect";
+    }
+}
+</script>
+
 </body>
 </html>
